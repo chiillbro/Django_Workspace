@@ -1,0 +1,18 @@
+{% extends "master.html" %} {% block title %} Testing
+Template..
+
+{% endblock %} {% block content %}
+{% load static %}  
+<link rel="stylesheet" href="{% static 'myglobal.css' %}" />
+<h1>Hey guys, I'm <strong>{{myList.firstname}} {{myList.lastname}}</strong></h1>
+<p><i>{{myList.Role}}</i></p>
+<h3>Stack</h3>
+<ul>
+  {% for x in myList.Stack %}
+  <li>{{x}}</li>
+  {% endfor %} {% with database="PostgreSQL" %}
+  <li>{{database}}</li>
+  {% endwith %}
+</ul>
+
+{% endblock %}
